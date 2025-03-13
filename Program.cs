@@ -1,4 +1,6 @@
-﻿namespace CSharpCourseExplainationExamples
+﻿using System.Xml.Serialization;
+
+namespace CSharpCourseExplainationExamples
 {
     internal class Program
     {
@@ -318,7 +320,7 @@
             //////-----------------Logic operators
             ////int x, y;
             ////x = y = 5;
-           
+
             ////bool isThursday, morning;
             ////isThursday = true;
             ////morning = true;
@@ -337,22 +339,92 @@
 
             ////}
             //--------------------------Explain examples on switch and looping
-            Console.WriteLine("Enter any number :\n");
-            int input = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Enter any number :\n");
+            //int input = int.Parse(Console.ReadLine());
 
-            int sum = 0;
+            //int sum = 0;
 
-            for(int counter=1 ; counter <= input  ; counter++)
-            {
+            //for(int counter=1 ; counter <= input  ; counter++)
+            //{
 
-                if (counter % 2 == 0)
-                    sum = sum + counter;
+            //    if (counter % 2 == 0)
+            //        sum = sum + counter;
 
-            }
+            //}
 
-            Console.WriteLine("sum = " + sum);
+            //Console.WriteLine("sum = " + sum);
 
             //---------------------------------------------------
+            char choice;
+
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("Enter the operation number :\n1. Addition\n2. Subtraction ");
+                Console.WriteLine("3. Multiplication\n4. Division");
+
+                int OperationNumber = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter first number :");
+                int FirstNumber = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter first number :");
+                int SecondNumber = int.Parse(Console.ReadLine());
+
+
+                double result = 0;
+
+                bool isActive = false;
+
+                switch (OperationNumber)
+                {
+
+
+                    case 1:
+                        result = FirstNumber + SecondNumber;
+                        break;
+
+                    case 2:
+                        result = FirstNumber - SecondNumber;
+                        break;
+
+                    case 3:
+                        result = FirstNumber * SecondNumber;
+                        break;
+
+                    case 4:
+
+                        if (SecondNumber == 0)
+                        {
+                            Console.WriteLine("Division by zero not allowed");
+                            isActive = true;
+
+                        }
+                        else
+                        {
+                            result = FirstNumber / SecondNumber;
+                        }
+
+                        break;
+
+                    default:
+                        Console.WriteLine("Wrong Choice");
+                        isActive = true;
+                        break;
+                }
+
+
+                if (!isActive)
+                {
+                    Console.WriteLine(result);
+                }
+
+                Console.WriteLine("Do you want another operation ? y / n");
+                 choice = Console.ReadKey().KeyChar;
+
+            } while (choice == 'y' || choice == 'Y');
+
+            Console.WriteLine("\ngood bye");
         }
 
 
