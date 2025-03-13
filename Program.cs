@@ -317,5 +317,6 @@
 
         }
 
+        //-----------------Explain examples on switch and looping
     }
 }
