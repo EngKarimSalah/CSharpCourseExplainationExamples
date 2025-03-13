@@ -315,8 +315,35 @@
             }
             while (num != 20);
 
+            //-----------------Logic operators
+            int x, y;
+            x = y = 5;
+           
+            bool isThursday, morning;
+            isThursday = true;
+            morning = true;
+
+
+            if(    isThursday &&  (x>y)  && morning      )
+            {
+                Console.WriteLine("");
+
+            }
+
+
+            if (isThursday || (x > y) || morning)
+            {
+                Console.WriteLine("");
+
+            }
+            //--------------------------Explain examples on switch and looping
+
         }
 
-        //-----------------Explain examples on switch and looping
+
+
+
+
     }
+
 }
