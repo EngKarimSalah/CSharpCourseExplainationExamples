@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Security.Cryptography;
+using System.Xml.Serialization;
 
 namespace CSharpCourseExplainationExamples
 {
@@ -355,81 +356,194 @@ namespace CSharpCourseExplainationExamples
             //Console.WriteLine("sum = " + sum);
 
             //---------------------------------------------------
-            char choice;
+            //char choice;
 
-            do
+            //do
+            //{
+            //    Console.Clear();
+            //    Console.WriteLine("Enter the operation number :\n1. Addition\n2. Subtraction ");
+            //    Console.WriteLine("3. Multiplication\n4. Division");
+
+            //    int OperationNumber = int.Parse(Console.ReadLine());
+
+            //    Console.WriteLine("Enter first number :");
+            //    int FirstNumber = int.Parse(Console.ReadLine());
+
+            //    Console.WriteLine("Enter first number :");
+            //    int SecondNumber = int.Parse(Console.ReadLine());
+
+
+            //    double result = 0;
+
+            //    bool isActive = false;
+
+            //    switch (OperationNumber)
+            //    {
+
+
+            //        case 1:
+            //            result = FirstNumber + SecondNumber;
+            //            break;
+
+            //        case 2:
+            //            result = FirstNumber - SecondNumber;
+            //            break;
+
+            //        case 3:
+            //            result = FirstNumber * SecondNumber;
+            //            break;
+
+            //        case 4:
+
+            //            if (SecondNumber == 0)
+            //            {
+            //                Console.WriteLine("Division by zero not allowed");
+            //                isActive = true;
+
+            //            }
+            //            else
+            //            {
+            //                result = FirstNumber / SecondNumber;
+            //            }
+
+            //            break;
+
+            //        default:
+            //            Console.WriteLine("Wrong Choice");
+            //            isActive = true;
+            //            break;
+            //    }
+
+
+            //    if (!isActive)
+            //    {
+            //        Console.WriteLine(result);
+            //    }
+
+            //    Console.WriteLine("Do you want another operation ? y / n");
+            //     choice = Console.ReadKey().KeyChar;
+
+            //} while (choice == 'y' || choice == 'Y');
+
+            //Console.WriteLine("\ngood bye");
+
+            //----------------------------nested for loop
+
+
+            //for (int i = 0 ; i <= 10; i += 2 ) //Increment for
+            //{
+
+            //}
+
+
+            //for (int i = 20 ; i >= 10;  i-=2 ) //decremental for
+            //{ }
+
+
+            //for (int i = 1; i <= 5; i++)
+            //{
+
+            //    for (int j=1; j<=5; j++)
+            //    {
+            //        Console.Write(i*j + " ");
+
+            //    }
+            //    Console.WriteLine();
+
+            //}
+
+
+
+            //for(int i = 1;i <= 5; i++)
+            //{
+            //    for (int j = 1; j <= i; j++) // Controls columns
+            //    {
+            //        Console.Write("* ");
+            //    }
+
+            //    Console.WriteLine();
+            //}
+
+
+
+            Console.WriteLine("enter number of rows : ");
+            int n = int.Parse(Console.ReadLine());
+
+
+            for(int i=1; i<=n; i++)
             {
-                Console.Clear();
-                Console.WriteLine("Enter the operation number :\n1. Addition\n2. Subtraction ");
-                Console.WriteLine("3. Multiplication\n4. Division");
-
-                int OperationNumber = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Enter first number :");
-                int FirstNumber = int.Parse(Console.ReadLine());
-
-                Console.WriteLine("Enter first number :");
-                int SecondNumber = int.Parse(Console.ReadLine());
-
-
-                double result = 0;
-
-                bool isActive = false;
-
-                switch (OperationNumber)
+                for(int j=n-i; j>=1; j--)
                 {
-
-
-                    case 1:
-                        result = FirstNumber + SecondNumber;
-                        break;
-
-                    case 2:
-                        result = FirstNumber - SecondNumber;
-                        break;
-
-                    case 3:
-                        result = FirstNumber * SecondNumber;
-                        break;
-
-                    case 4:
-
-                        if (SecondNumber == 0)
-                        {
-                            Console.WriteLine("Division by zero not allowed");
-                            isActive = true;
-
-                        }
-                        else
-                        {
-                            result = FirstNumber / SecondNumber;
-                        }
-
-                        break;
-
-                    default:
-                        Console.WriteLine("Wrong Choice");
-                        isActive = true;
-                        break;
+                    Console.Write(" ");
                 }
 
-
-                if (!isActive)
+                for (int k = 1; k <= i*2-1; k++)
                 {
-                    Console.WriteLine(result);
+                    Console.Write("*");
                 }
 
-                Console.WriteLine("Do you want another operation ? y / n");
-                 choice = Console.ReadKey().KeyChar;
+                Console.WriteLine();
+            }
 
-            } while (choice == 'y' || choice == 'Y');
 
-            Console.WriteLine("\ngood bye");
+
+
+
+
+
+
+            ////-- Multiplication table
+            //for (int i = 1; i <= 5; i++) // Outer loop for rows
+            //{
+            //    for (int j = 1; j <= 5; j++) // Inner loop for columns
+            //    {
+            //        Console.Write((i * j) + "\t"); // Print product
+            //    }
+            //    Console.WriteLine(); // New line after each row
+            //}
+
+
+            //Console.WriteLine();
+            ////----- Right-Angled Triangle
+            //int m = 5; // Number of rows
+
+            //for (int i = 1; i <= m; i++) // Controls rows
+            //{
+            //    for (int j = 1; j <= i; j++) // Controls columns
+            //    {
+            //        Console.Write("* ");
+            //    }
+            //    Console.WriteLine(); // Move to next line
+            //}
+
+
+            //Console.WriteLine();
+            ////--Pyramid Pattern
+            //int n = 5; // Number of rows
+            //for (int i = 1; i <= n; i++) // Controls rows
+            //{
+            //    for (int j = 1; j <= n - i; j++) // Prints spaces
+            //    { Console.Write(" "); }
+            //    for (int k = 1; k <= 2 * i - 1; k++) // Prints stars
+            //    { Console.Write("*"); }
+            //    Console.WriteLine(); // Move to the next line
+            //}
+
+
+
+            ///////////////////////////////////////////////////// factorial
+            int result = 1;
+
+            for(int i =1; i<=n; i++)
+
+            {
+                result *= i;
+
+
+            }
+
+            Console.WriteLine(result);
         }
-
-
-
-
 
     }
 
