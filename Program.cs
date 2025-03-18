@@ -466,24 +466,24 @@ namespace CSharpCourseExplainationExamples
 
 
 
-            Console.WriteLine("enter number of rows : ");
-            int n = int.Parse(Console.ReadLine());
+            //Console.WriteLine("enter number of rows : ");
+            //int n = int.Parse(Console.ReadLine());
 
 
-            for(int i=1; i<=n; i++)
-            {
-                for(int j=n-i; j>=1; j--)
-                {
-                    Console.Write(" ");
-                }
+            //for(int i=1; i<=n; i++)
+            //{
+            //    for(int j=n-i; j>=1; j--)
+            //    {
+            //        Console.Write(" ");
+            //    }
 
-                for (int k = 1; k <= i*2-1; k++)
-                {
-                    Console.Write("*");
-                }
+            //    for (int k = 1; k <= i*2-1; k++)
+            //    {
+            //        Console.Write("*");
+            //    }
 
-                Console.WriteLine();
-            }
+            //    Console.WriteLine();
+            //}
 
 
 
@@ -532,17 +532,89 @@ namespace CSharpCourseExplainationExamples
 
 
             ///////////////////////////////////////////////////// factorial
-            int result = 1;
+            //int result = 1;
 
-            for(int i =1; i<=n; i++)
+            //for(int i =1; i<=n; i++)
 
+            //{
+            //    result *= i;
+
+
+            //}
+
+            //Console.WriteLine(result);
+
+            /////----------------Array
+            ///
+
+
+
+            //int[] numbers = new int[3]; //initialize array
+
+            //Console.WriteLine("Enter 3 numbers ");
+
+            ////fill array
+            //for (int i = 0; i < numbers.Length; i++) 
+            //{
+            //    numbers[i] = int.Parse(Console.ReadLine()); 
+            //}
+
+            //int sum = 0;
+            ////print array elements
+            //for (int i = 0; i < numbers.Length; i++)
+            //{
+            //   sum = sum + numbers[i];
+            //}
+
+            //// i++ --> i+=1 --> i = i+1
+            int[,] numbers2 = new int[2, 5];
+            //numbers2[0, 0] = 10; // first row , first column
+            //numbers2[0, 2] = 15; // first row, third column
+
+            ////Console.WriteLine(numbers2[0, 2]);
+
+            Console.WriteLine(numbers2.Length);
+
+            for (int i = 0; i < 2; i++)
             {
-                result *= i;
-
+                for (int j = 0; j < 5; j++)
+                {
+                    Console.WriteLine(numbers2[i, j]);
+                }
 
             }
 
-            Console.WriteLine(result);
+
+
+
+
+
+
+
+            int n = 0;
+            Console.WriteLine("Enter number of student :");
+            n = int.Parse(Console.ReadLine());
+
+            double[] grades = new double[n];
+
+            Console.WriteLine("Enter students grades");
+
+            for (int i = 0; i < n; i++) 
+            {
+                grades[i] = double.Parse(Console.ReadLine()); 
+            }
+
+
+            double sum = 0;
+            double avg;
+
+            for (int i = 0; i < n; i++)
+            {
+              sum += grades[i]; 
+            }
+
+            avg = sum / n;
+            Console.WriteLine("The average is : " + avg);
         }
 
     }
