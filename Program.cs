@@ -567,54 +567,79 @@ namespace CSharpCourseExplainationExamples
             //}
 
             //// i++ --> i+=1 --> i = i+1
-            int[,] numbers2 = new int[2, 5];
-            //numbers2[0, 0] = 10; // first row , first column
-            //numbers2[0, 2] = 15; // first row, third column
+            //int[,] numbers2 = new int[2, 5];
+            ////numbers2[0, 0] = 10; // first row , first column
+            ////numbers2[0, 2] = 15; // first row, third column
 
-            ////Console.WriteLine(numbers2[0, 2]);
+            //////Console.WriteLine(numbers2[0, 2]);
 
-            Console.WriteLine(numbers2.Length);
+            //Console.WriteLine(numbers2.Length);
 
-            for (int i = 0; i < 2; i++)
-            {
-                for (int j = 0; j < 5; j++)
-                {
-                    Console.WriteLine(numbers2[i, j]);
-                }
+            //for (int i = 0; i < 2; i++)
+            //{
+            //    for (int j = 0; j < 5; j++)
+            //    {
+            //        Console.WriteLine(numbers2[i, j]);
+            //    }
 
-            }
-
-
+            //}
 
 
 
 
 
 
-            int n = 0;
-            Console.WriteLine("Enter number of student :");
-            n = int.Parse(Console.ReadLine());
-
-            double[] grades = new double[n];
-
-            Console.WriteLine("Enter students grades");
-
-            for (int i = 0; i < n; i++) 
-            {
-                grades[i] = double.Parse(Console.ReadLine()); 
-            }
 
 
-            double sum = 0;
-            double avg;
+            //int n = 0;
+            //Console.WriteLine("Enter number of student :");
+            //n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < n; i++)
-            {
-              sum += grades[i]; 
-            }
+            //double[] grades = new double[n];
 
-            avg = sum / n;
-            Console.WriteLine("The average is : " + avg);
+            //Console.WriteLine("Enter students grades");
+
+            //for (int i = 0; i < n; i++) 
+            //{
+            //    grades[i] = double.Parse(Console.ReadLine()); 
+            //}
+
+
+            //double sum = 0;
+            //double avg;
+
+            //for (int i = 0; i < n; i++)
+            //{
+            //  sum += grades[i]; 
+            //}
+
+            //avg = sum / n;
+            //Console.WriteLine("The average is : " + avg);
+
+            //--Function calling structure
+            /*
+             1- Function implement 
+             
+            2- (if already implemented ) Function Usage ( calling )
+             
+          structure:  ClassName.FunctionName ( parameter1, parameter2 .....)
+
+         function return:  inplace of calling
+
+            example:    Math.Pow(2,3) ----> 8
+
+            Console.Writeline(   Math.Pow(2,3)    ); --> print 8
+
+            int result = Math.Pow(2,3); ---> result = 8
+
+             int result = Math.Pow(2,3) + 16; ---> result = 24
+
+             * 
+             */
+            //--- repo name 
+            //-- SimpleStudentManagementProject_CSharpProject1 
+            
+
         }
 
     }
