@@ -638,10 +638,147 @@ namespace CSharpCourseExplainationExamples
              */
             //--- repo name 
             //-- SimpleStudentManagementProject_CSharpProject1 
+
+
+
+            ////////////////////////////////////////////////
+
+
+
+            int R,t;
+
+            // int, float, double, char, bool --> stack storage (constant space)
+
+            // string, array, list, any data structure --> heap storage (variable space)  
+
+            // stack storage have initial value --> don't ever produce null reference exception
+            // heap storage starts with Null until you assign value --> can produce null exception
+
+            string M = "hello";
+            char[] C = new char[] {'h','e','l','l','o' };
+
+            int[] marks = new int[10];
+            int[] ages = new int[5];
+            string[] names= new string[5];  
+
+
+            for(int i=0; i < marks.Length; i++) 
+            {
+             //   Console.WriteLine(marks[i] + names[i]); //Indexoutof range
+            }
+
+
+            bool successede = true;
+
+            try
+            {
+                //string input = "12k";
+                Console.WriteLine("enter degree");
+                string degree = Console.ReadLine();
+                int output = int.Parse(degree);    // may format exception
+
+            }
+            catch(Exception e)
+            {
+
+                Console.WriteLine("Degree didn't saved because of the followin error: "+ e.Message);
+                successede = false;
+            }
+
+
+            //try
+            //{
+            //    string[] Studentnames=new string[10];
+            //    // names= database.getNamesTable;
+            //    for(int i=0; i < Studentnames.Length; i++)
+            //    {
+            //        Console.Write(Studentnames[i]);
+            //    }
+            //}
+            //catch(Exception e)
+            //{ 
+            //    Console.WriteLine(e.Message);
+            //}
+
+
+            //---------------------------------------------
+            //handle run time errors
+
+            try
+            {
+
+                int x, y;
+                double z;
+                bool k;
+
+                x = 10;
+                y = 0;
+                z = x / y; //division by zero exception
+            }
+            catch(Exception e) 
+            {
+                Console.WriteLine("Division failed due to :" + e.Message);
             
+            }
+
+            Console.WriteLine("after exception handeled");
+            Console.ReadLine();
+
+            string numberStr = "123";
+                if (int.TryParse(numberStr, out int number))
+                {
+                    Console.WriteLine($"Conversion successful: {number}");
+                }
+                else
+                {
+                    Console.WriteLine("Conversion failed.");
+                }
+
+
+
+
+            
+                string Number = "123abc";
+                
+                if (int.TryParse(Number, out int result))
+                {
+                    Console.WriteLine($"Conversion successful: {result}");
+                }
+                else
+                {
+                    Console.WriteLine("Conversion failed.");
+                }
+
+
+
+
+
+                string decimalStr = "12.34";
+                if (double.TryParse(decimalStr, out double decimalNumber))
+                {
+                    Console.WriteLine($"Converted to double: {decimalNumber}");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid input for double.");
+                }
+
+
+
+
+
+                string dateStr = "2024-03-24";
+                if (DateTime.TryParse(dateStr, out DateTime date))
+                {
+                    Console.WriteLine($"Parsed date: {date}");
+                }
+                else
+                {
+                    Console.WriteLine("Invalid date format.");
+                }
+
+            }
 
         }
 
     }
-
-}
