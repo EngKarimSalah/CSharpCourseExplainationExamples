@@ -36,6 +36,13 @@ namespace CSharpCourseExplainationExamples
             Console.WriteLine("the result of this operation is: " + input); 
         }
 
+
+
+        public static void printValue(int input)
+        {
+            Console.WriteLine("the result of this operation is: " + input);
+        }
+
         static void Main(string[] args)
         {
 
@@ -57,7 +64,9 @@ namespace CSharpCourseExplainationExamples
                     int x = int.Parse(Console.ReadLine());
                     int y = int.Parse(Console.ReadLine());
                     int result = SumTwoNumbers(x,y);
-                    printValue(result.ToString());
+                    printValue(result); // run method with int param
+                    printValue(result.ToString()); // run method with string param
+
                     break;
 
                 case 3:
