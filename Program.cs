@@ -1,5 +1,6 @@
 ﻿using System.Security.Cryptography;
 using System.Xml.Serialization;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CSharpCourseExplainationExamples
 {
@@ -15,8 +16,90 @@ namespace CSharpCourseExplainationExamples
         /// <summary>
         /// This method prints a greeting message.
         /// </summary> 
+        public static int SumTwoNumbers(int x, int y)
+        {
+
+            return x + y;   
+        
+        }
+
+        public static string GuessEvemnOrOdd(int number)
+        {
+            if (number % 2 == 0)
+                return "Even";
+            else
+                return "Odd";
+        }
+
+        public static void printValue(string input)
+        { 
+            Console.WriteLine("the result of this operation is: " + input); 
+        }
+
         static void Main(string[] args)
         {
+
+
+            //escape characters
+            Console.WriteLine("Welcome to program menu \n 1.Print your name \n 2.sum 2 numbers \n 3. Check Even or Odd ");
+            int choice = int.Parse(Console.ReadLine());
+
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("enter your name ");
+                    string name = Console.ReadLine();
+                    printValue(name);
+                    break;
+
+                case 2:
+                    Console.WriteLine("Enter 2 numbers to sum ");
+                    int x = int.Parse(Console.ReadLine());
+                    int y = int.Parse(Console.ReadLine());
+                    int result = SumTwoNumbers(x,y);
+                    printValue(result.ToString());
+                    break;
+
+                case 3:
+                    Console.WriteLine("Enter number");
+                    int input = int.Parse(Console.ReadLine());
+                    string result2 = GuessEvemnOrOdd(input);
+                    printValue(result2);
+
+                    break;
+
+                default:
+
+                    break;
+
+
+            }
+
+
+
+            //test( "karim",25);
+
+            //test2();
+
+            //value type vs reference type assignment 
+            //int a = 10;
+            //int b = a;
+
+            //string x = "karim";           
+            //string y = x;
+
+            //string z = System.String.Copy(x);
+
+            //int[] k = { 1, 2, 3 };
+            //int[] h = k;
+
+            //int[] g = new int[3]; 
+            //Array.Copy(k,g,3);
+
+
+
+
+
 
             ////float StudentMark;
 
@@ -704,81 +787,114 @@ namespace CSharpCourseExplainationExamples
             //---------------------------------------------
             //handle run time errors
 
-            try
-            {
+            //try
+            //{
 
-                int x, y;
-                double z;
-                bool k;
+            //    int x, y;
+            //    double z;
+            //    bool k;
 
-                x = 10;
-                y = 0;
-                z = x / y; //division by zero exception
-            }
-            catch(Exception e) 
-            {
-                Console.WriteLine("Division failed due to :" + e.Message);
+            //    x = 10;
+            //    y = 0;
+            //    z = x / y; //division by zero exception
+            //}
+            //catch(Exception e) 
+            //{
+            //    Console.WriteLine("Division failed due to :" + e.Message);
             
-            }
+            //}
 
-            Console.WriteLine("after exception handeled");
-            Console.ReadLine();
+            //Console.WriteLine("after exception handeled");
+            //Console.ReadLine();
 
-            string numberStr = "123";
-                if (int.TryParse(numberStr, out int number))
-                {
-                    Console.WriteLine($"Conversion successful: {number}");
-                }
-                else
-                {
-                    Console.WriteLine("Conversion failed.");
-                }
+            //string numberStr = "123";
+            //    if (int.TryParse(numberStr, out int number))
+            //    {
+            //        Console.WriteLine($"Conversion successful: {number}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Conversion failed.");
+            //    }
 
 
 
 
             
-                string Number = "123abc";
+            //    string Number = "123abc";
                 
-                if (int.TryParse(Number, out int result))
-                {
-                    Console.WriteLine($"Conversion successful: {result}");
-                }
-                else
-                {
-                    Console.WriteLine("Conversion failed.");
-                }
+            //    if (int.TryParse(Number, out int result))
+            //    {
+            //        Console.WriteLine($"Conversion successful: {result}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Conversion failed.");
+            //    }
 
 
 
 
 
-                string decimalStr = "12.34";
-                if (double.TryParse(decimalStr, out double decimalNumber))
-                {
-                    Console.WriteLine($"Converted to double: {decimalNumber}");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid input for double.");
-                }
+            //    string decimalStr = "12.34";
+            //    if (double.TryParse(decimalStr, out double decimalNumber))
+            //    {
+            //        Console.WriteLine($"Converted to double: {decimalNumber}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid input for double.");
+            //    }
 
 
 
 
 
-                string dateStr = "2024-03-24";
-                if (DateTime.TryParse(dateStr, out DateTime date))
-                {
-                    Console.WriteLine($"Parsed date: {date}");
-                }
-                else
-                {
-                    Console.WriteLine("Invalid date format.");
-                }
+            //    string dateStr = "2024-03-24";
+            //    if (DateTime.TryParse(dateStr, out DateTime date))
+            //    {
+            //        Console.WriteLine($"Parsed date: {date}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("Invalid date format.");
+            //    }
 
             }
+
+       public static void test(string age, int salary)
+        {
+
 
         }
+
+        public static void test2(string country="Oman")
+        {
+
+            int z = 10;
+            IncrementValue(z);
+
+            string name = "karim";
+            PrintName(name);    
+
+        }
+
+        public static void IncrementValue(int x)
+        { x++;
+
+            Console.WriteLine(x);
+        }
+
+
+        public static void getIndex(out int order)
+        {
+           string[] names = { "karim","ahmed"};
+
+           string input = Console.ReadLine();
+
+            order = Array.IndexOf(names, input);
+                  
+        }
+    }
 
     }
