@@ -16,6 +16,8 @@ namespace CSharpCourseExplainationExamples
         /// <summary>
         /// This method prints a greeting message.
         /// </summary> 
+        /// 
+
         public static int SumTwoNumbers(int x, int y)
         {
 
@@ -43,8 +45,29 @@ namespace CSharpCourseExplainationExamples
             Console.WriteLine("the result of this operation is: " + input);
         }
 
+
+        public static void ExitApp(ref bool flag)
+        {
+            flag = false;
+
+        }
+
         static void Main(string[] args)
         {
+
+            //welcome message --> function
+            bool ProgramContinue = true;
+            do
+            {
+                //showMenu --> 
+                // int choice = showmneu();
+
+                ExitApp(ref ProgramContinue);
+
+            }
+            while (ProgramContinue != false);
+
+            //Thank you message --> function
 
 
             //escape characters
