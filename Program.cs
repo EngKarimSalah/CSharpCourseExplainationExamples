@@ -58,10 +58,10 @@ namespace CSharpCourseExplainationExamples
             //List
             List<int> numbers = new List<int>();
             numbers.Clear();
+            //////////////////////////////////
 
 
-
-
+            /////
             //welcome message --> function
             bool ProgramContinue = true;
             do
